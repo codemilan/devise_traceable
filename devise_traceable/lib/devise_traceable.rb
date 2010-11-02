@@ -1,0 +1,3 @@
+module DeviseTraceable
+  # Your code goes here...
+end
