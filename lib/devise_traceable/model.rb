@@ -7,12 +7,13 @@ module Devise
     # * resource_id
     # * sign_in_at
     # * sign_out_at
-    
+
     module Traceable
-      def stamp!
+      def track_login!
         new_current = Time.now
-        "#{self.class}Tracing".constantize.create(:sign_in_at => self.current_sign_in_at, :sign_out_at => new_current, "#{self.class}".foreign_key.to_sym => self.id)
+        "#{self.class}Tracing".constantize.create(:sign_in_at => self.current_sign_in_at, :ip => request.remote_ip, "#{self.class}".foreign_key.to_sym => self.id)
       end
     end
   end
 end
+

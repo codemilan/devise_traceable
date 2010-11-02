@@ -3,8 +3,9 @@
 # and on authentication. Retrieving the user from session (:fetch) does
 # not trigger it.
 
-Warden::Manager.before_logout do |record, warden, opts|
-  if record.respond_to?(:stamp!)
-    record.stamp!
+Warden::Manager.after_set_user do |record, warden, opts|
+  if record.respond_to?(:track_login!)
+    record.track_login!
   end
 end
+
