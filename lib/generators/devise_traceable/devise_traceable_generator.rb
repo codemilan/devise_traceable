@@ -52,6 +52,6 @@ class DeviseTraceableGenerator < Rails::Generators::NamedBase
   end
 
   def model_path
-    @model_path ||= File.join("app", "models", "#{file_path}.rb")
+    @model_path ||= File.join("app", "models", "#{file_path}_tracing.rb")
   end
 end

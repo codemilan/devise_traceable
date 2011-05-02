@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.authors     = []
   s.email       = []
   s.homepage    = "http://rubygems.org/gems/devise_traceable"
-  s.summary     = "TODO: Write a gem summary"
-  s.description = "TODO: Write a gem description"
+  s.summary     = "Simple tracing addon for devise"
+  s.description = "Adds table to track signed_in, signed_out, ip "
 
   s.required_rubygems_version = ">= 1.3.6"
   s.rubyforge_project         = "devise_traceable"
