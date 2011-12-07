@@ -10,7 +10,7 @@ module Devise
 
     module Traceable
       def track_login!(request)
-        "#{self.class}Tracing".constantize.create(:sign_in_at => self.current_sign_in_at, :ip => request.remote_ip, "#{self.class}".foreign_key.to_sym => self.id)
+        "#{self.class}Tracing".constantize.create(:sign_in_at => self.current_sign_in_at, :ip => request.remote_ip, :user_agent => request.headers["User-Agent"], "#{self.class}".foreign_key.to_sym => self.id)
       end
       def track_logout!(request)
         login = "#{self.class}Tracing".constantize.where(:sign_in_at => self.current_sign_in_at, "#{self.class}".foreign_key.to_sym => self.id)
