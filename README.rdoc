@@ -28,6 +28,10 @@ Configure devise_traceable inside your app (and warden and devise if you weren't
     devise :database_authenticatable, ..... , :traceable
   end
 
+== Views
+
+  to use the simple audit view set @tracing_entries
+
 == Copyright
 
 Copyright (c) 2010 mobiThought. See LICENSE for details.
