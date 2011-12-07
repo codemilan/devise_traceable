@@ -1,0 +1,16 @@
+<table>
+  <tr>
+    <th>Sign In</th>
+    <th>Sign Out</th>
+    <th>From</th>
+    <th>Using</th>
+  </tr>
+<% @tracing_entries.each do |entry| %>
+  <tr>
+    <td><%= entry.sign_in_at %></td>
+    <td><%= entry.sign_out_at %></td>
+    <td><%= entry.ip %></td>
+    <td><%= entry.user_agent %></td>
+  </tr>
+<% end %>
+</table>
