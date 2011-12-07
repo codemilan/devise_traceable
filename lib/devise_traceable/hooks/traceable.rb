@@ -8,7 +8,7 @@ Warden::Manager.after_authentication do |record, warden, opts|
     record.track_login!(warden.request)
   end
 end
-Warden::Manager.after_logout do |record, warden, opts|
+Warden::Manager.before_logout do |record, warden, opts|
   if record.respond_to?(:track_logout!)
     record.track_logout!
   end
