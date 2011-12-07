@@ -10,7 +10,7 @@ Warden::Manager.after_authentication do |record, warden, opts|
 end
 Warden::Manager.before_logout do |record, warden, opts|
   if record.respond_to?(:track_logout!)
-    record.track_logout!
+    record.track_logout!(warden.request)
   end
 end
 
