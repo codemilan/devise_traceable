@@ -15,7 +15,7 @@ module Devise
       def track_logout!(request)
         login = "#{self.class}Tracing".constantize.where(:sign_in_at => self.current_sign_in_at, "#{self.class}".foreign_key.to_sym => self.id)
         new_current = Time.now
-        if login
+        if login && login.first
           login.first.update_attribute(:sign_out_at, new_current)
         else
           "#{self.class}Tracing".constantize.create(:sign_in_at => self.current_sign_in_at, :ip => request.remote_ip,
