@@ -19,6 +19,7 @@ module Devise
           login.first.update_attribute(:sign_out_at, new_current)
         else
           "#{self.class}Tracing".constantize.create(:sign_in_at => self.current_sign_in_at, :ip => request.remote_ip,
+                                                     :user_agent => request.headers["User-Agent"],
                                                      "#{self.class}".foreign_key.to_sym => self.id,
                                                      :sign_out_at => new_current)
         end
