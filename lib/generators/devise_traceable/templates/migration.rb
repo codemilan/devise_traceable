@@ -4,6 +4,7 @@ class DeviseCreate<%= table_name.camelize.singularize %>Tracings < ActiveRecord:
       t.integer  :<%= table_name.classify.foreign_key  %>
       t.datetime :sign_in_at
       t.string :ip
+      t.text :user_agent 
     end
 
     add_index :<%= table_name.singularize %>_tracings, :<%= table_name.classify.foreign_key  %>
