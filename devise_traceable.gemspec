@@ -5,8 +5,8 @@ Gem::Specification.new do |s|
   s.name        = "devise_traceable"
   s.version     = DeviseTraceable::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = []
-  s.email       = []
+  s.authors     = ["Jonathan De Jong", "Jonathan Warner", "shenoudab"]
+  s.email       = ["jdejong@sparknettech.com"]
   s.homepage    = "http://rubygems.org/gems/devise_traceable"
   s.summary     = "Simple tracing addon for devise"
   s.description = "Adds table to track signed_in, signed_out, ip "
