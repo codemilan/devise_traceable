@@ -4,19 +4,9 @@ It adds support to devise[http://github.com/plataformatec/devise] for tracing.
 
 == Installation
 
-All gems are on gemcutter, so you need to add gemcutter to your sources if you haven’t yet:
-
-  sudo gem sources -a http://gemcutter.org/
-
-Install devise_traceable gem, it should install dependencies (such as devise and warden):
-
-  sudo gem install devise_traceable
-
 Configure devise_traceable inside your app (and warden and devise if you weren't using them):
 
-  gem 'warden'
-  gem 'devise'
-  gem 'devise_traceable'
+  gem 'devise_traceable' , :git => 'https://github.com/coorasse/devise_traceable.git'
 
 == Usage
 
